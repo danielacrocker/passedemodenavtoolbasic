@@ -8,14 +8,21 @@
     width: 100%;
 }
 
-#inspire {
-  font-family: 'Avenir', Arial, Helvetica, sans-serif;
+#inspire {  
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
+.container.fill-height {  
+  align-items: normal;
 }
 
-.container.fill-height {
-  align-items: none;
-}
-
-a.side_bar_link {
+a.side_bar_link {  
   text-decoration: none;
+}
+
+.card__title--primary, .card__text {
+  text-align: left;
+}
+
+.card {
+  height: 100% !important
 }
