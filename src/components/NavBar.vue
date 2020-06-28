@@ -56,6 +56,7 @@ export default {
     drawer: false,
     links: [
       { icon: 'home', text: 'Home', route: '/'},
+      { icon: 'face', text: 'Contacts', route: '/contact'},
       { icon: 'contacts', text: 'About', route: '/about'}
     ]
   }), 
