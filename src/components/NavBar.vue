@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav>
-      <v-toolbar>
+      <v-toolbar color="indigo" class="white--text">
         <v-app-bar-nav-icon class="grey--text" @click="drawer = !drawer"></v-app-bar-nav-icon>
 
         <v-toolbar-title class="grey--text">
@@ -11,10 +11,10 @@
         <v-spacer></v-spacer>
 
         <!-- dropdown menu -->
-        <v-menu offset-y>
+        <v-menu offset-y class="white--text">
           <template v-slot:activator="{ on }">
           <!-- <v-btn text slot="activator"> -->
-          <v-btn text v-on="on">
+          <v-btn text v-on="on" class="white--text">
             <v-icon left>expand_more</v-icon>
             <span>Menu</span>
           </v-btn>
@@ -27,7 +27,7 @@
           </v-list>
         </v-menu>
 
-        <v-btn text>
+        <v-btn text class="white--text">
           <span>Sign Out</span>
           <v-icon right>exit_to_app</v-icon>
         </v-btn>

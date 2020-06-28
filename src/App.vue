@@ -9,6 +9,8 @@
 
 <script>
 import NavBar from '@/components/NavBar'
+import './assets/stylesheets/main.css'
+
 export default {
   name: 'App',
   components: { NavBar },
