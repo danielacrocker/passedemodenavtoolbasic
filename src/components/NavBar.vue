@@ -46,7 +46,12 @@
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
+
+      <v-footer color="indigo" app>
+        <span class="white--text">&copy; 2018</span>
+      </v-footer>
     </nav>
+
   </div>
 </template>
 
