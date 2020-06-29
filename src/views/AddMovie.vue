@@ -4,12 +4,18 @@
       <v-text-field name="input-7-1" label="Movie Description" v-model="description" multi-line></v-text-field>
       <v-select label="Movie Release Year" v-model="release_year" :items="years"></v-select>
       <v-text-field label="Movie Genre" v-model="genre"></v-text-field>
-      <v-btn @click="submit" :disabled="!valid">submit</v-btn>
+      <v-btn @click="submit" 
+      :disabled="!valid">
+        submit
+      </v-btn>
       <v-btn @click="clear">clear</v-btn>
     </v-form>
 </template>
 
 <script>
+
+import axios from 'axios';
+
 export default {
   data: () => ({
     valid: true,
@@ -30,8 +36,27 @@ export default {
   }),
   methods: {
     submit() {
-      if (this.$refs.form.valide()) {
+      if (this.$refs.form.validate()) {
         // Perform next action
+        return axios({
+          method: 'post',
+          data: {
+            name: this.name,
+            description: this.description,
+            release_year: this.release_year,
+            genre: this.genre,
+          },
+          url: 'http://localhost:8081/movies',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        .then(() => {
+          this.$router.push({ name: 'Home' });
+          this.$refs.form.reset();
+        })
+        .catch(() => {
+        })
       }
     },
     clear() {
