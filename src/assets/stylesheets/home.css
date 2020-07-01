@@ -26,3 +26,6 @@ a.side_bar_link {
 .card {
   height: 100% !important
 }
+.card-title {
+  text-align: center;
+}

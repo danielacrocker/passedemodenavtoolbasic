@@ -1,4 +1,5 @@
-const MovieSchema = require('../models/movie.js');
+const MovieSchema = require('../models/Movie.js');
+const Rating = require('../models/Rating.js');
 
 module.exports.controller = (app) => {
   // fetch all movies
@@ -17,6 +18,27 @@ module.exports.controller = (app) => {
       if (error) { console.error(error); }
       res.send(movie);
     });
+  })
+
+  // rate a movie
+  app.post('/movies/rate/:id', (req, res) => {
+
+    console.log('app.post: rate a movie');
+
+    const rating = new Rating({
+      movie_id: req.params.id,
+      user_id: req.body.user_id,
+      rate: req.body.rate
+    })
+
+    rating.save(function (error, rating) {
+      if (error) { console.log(error); }
+      res.send({
+        movie_id: rating.movie_id,
+        user_id: rating.user_id,
+        rate: rating.rate
+      })
+    })
   })
 
   // add a new movie
